@@ -1,4 +1,4 @@
-# Conversor de moedas
+# Conversor 
 
 Conversor de moedas que atualiza o resultado enquanto você digita ou troca a moeda. Feito com **JavaScript puro** (sem frameworks e sem build) para praticar `fetch`, `async/await`, tratamento de erros e eventos de formulário.
 
