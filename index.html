@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversor de moedas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="intro">
+      <h1>Conversor de moedas</h1>
+      <p class="lead">Digite um valor ou troque a moeda. O resultado atualiza sozinho.</p>
+    </header>
+
+    <form id="form" class="controls" novalidate autocomplete="off">
+      <div class="field">
+        <label for="amount">Valor</label>
+        <input id="amount" name="amount" type="text" inputmode="decimal" value="100" />
+      </div>
+
+      <div class="pair">
+        <div class="field">
+          <label for="from">De</label>
+          <select id="from" disabled></select>
+        </div>
+
+        <button type="button" id="swap" class="swap" aria-label="Inverter moedas">⇄</button>
+
+        <div class="field">
+          <label for="to">Para</label>
+          <select id="to" disabled></select>
+        </div>
+      </div>
+    </form>
+
+    <section id="result-panel" class="result" aria-live="polite" aria-busy="false">
+      <p id="result-label" class="result-label"></p>
+      <p id="result-value" class="result-value">—</p>
+      <p id="result-rate" class="result-rate"></p>
+    </section>
+
+    <p id="status" class="status" role="status"></p>
+    <button type="button" id="retry" class="retry" hidden>Tentar de novo</button>
+
+    <section class="history" aria-labelledby="history-title">
+      <div class="history-head">
+        <h2 id="history-title">Últimas conversões</h2>
+        <button type="button" id="clear-history" class="link-btn" hidden>Limpar</button>
+      </div>
+      <ul id="history" class="history-list"></ul>
+      <p id="history-empty" class="history-empty">As conversões aparecem aqui.</p>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
